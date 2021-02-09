@@ -1,0 +1,39 @@
+city : Ville
+postCode : code postale
+patient's marital status : État civil du patient
+Patient's information: Information sur le patient
+Case history : Antécédents
+patient documentation : Documents du patient
+Undetermined : Indéterminé
+general Remarks : remarques générales
+marital Status : Statut marital
+no specify : Non préciser
+Single : célibataire
+married : marié(e)
+in a relationship with : en couple
+civil partnership : Pacsé(e)
+divorced : Divorcé(e)
+widower : Veuf(ve)
+occupation Education : Profession /Scolarité
+attending physician : médecin traitant
+Social security number : Numéro de securité social
+Send by : Envoyé par
+Manual Preference : préférence manuelle
+right-handed : droitier
+left-handed : gaucher
+current : Actuallment
+psycology : Psycologie
+medical traitement : Traitement médical
+medical history : Antécédents médicaux
+Long Lasting Treatment : Traitement long durée
+trauma history : Antécédent traumas
+sprain : entorse
+fracture : fracture 
+dislocation : luxation
+Car Accident : accident de voiture 
+surgical histories : Antécédent chirugicaux
+orthopaedic : orthopédique  
+headChurigie : churigie de la tête 
+churigiaOfAbdomen : churigie de l'abdomen
+gynecological Churigie : Gynécologie
+

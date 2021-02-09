@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{% block webTitle %} {% trans %} Register {% endtrans %} {% endblock %}
+
+{% block h2 %} {% trans %} Register of a new patient {% endtrans %} {% endblock %}
+
+{% block topMenu %} {% if top_menu is defined and top_menu =='hidden_RightTopMenu' %}  {% endif %} {% endblock %}
+
+{% block contentCreatePatient %}
+
+   {{ form_start(form) }}
+   
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item ">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        1-Patient's martial status
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="row">
+                        <br>
+                        <div class="col-md-4"> {{form_row(form.gender)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">{{form_row(form.lastName)}}</div> 
+                        <div class="col-md-4">{{form_row(form.firstName)}}</div> 
+                        <div class="col-md-4">{{form_row(form.birthDate)}}</div>         
+                    </div>              
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4">{{form_row(form.phonenumber)}}</div> 
+                        <div class="col-md-4">{{form_row(form.landlinePhone)}}</div>
+                        <div class="col-md-4">{{form_row(form.mailAddress)}}</div>  
+                    </div>
+                     <hr>
+                    <div class="row">
+                        <div class="col-6">{{form_row(form.address)}}</div> 
+                        <div class="col-6">{{form_row(form.address2)}}</div>         
+                    </div>
+                     <hr>
+                    <div class="row">
+                        <div class="col-md-6">{{form_row(form.city)}}</div> 
+                        <div class="col-md-4">{{form_row(form.postCode)}}</div>         
+                    </div>
+                     <hr>
+                    <div class="row">
+                         <div class="col-md-12">{{form_row(form.generalRemarks)}}</div> 
+                    </div> 
+                    <br> 
+            </div>
+          </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+         2-Patient's information
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <br>
+                <div class="row">
+                    <div class="col-md-4">{{form_row(form.maritalStatus)}}</div> 
+                    <div class="col-md-4">{{form_row(form.numberOfChildren)}}</div> 
+                    <div class="col-md-4">{{form_row(form.occupationEducation)}}</div> 
+                    <div class="col-md-4">{{form_row(form.leisure)}}</div> 
+                </div>
+                  <hr>
+                <div class="row">         
+                    <div class="col-md-4">{{form_row(form.professional)}}</div>
+                    <div class="col-md-4">{{form_row(form.socialSecurityNumber)}}</div> 
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">{{form_row(form.mutual)}}</div> 
+                    <div class="col-md-4">{{form_row(form.sentBy)}}</div> 
+                    <div class="col-md-4">{{form_row(form.manualPreference)}}</div> 
+                </div>
+                <br>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+         3- Case history
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+     <div class="row">
+              <div class="col-12">{{form_row(form.notesOnHistory)}}</div> 
+            </div>
+            <div class="row">
+                <h6> Current</h6>
+                <div class="col-md-4">{{form_row(form.disease)}}</div> 
+                <div class="col-md-4">{{form_row(form.psycology)}}</div> 
+                <div class="col-md-4">{{form_row(form.medicalTreatment)}}</div> 
+             </div>
+          <hr>
+              <div class="row">
+                  <h6> Medical history</h6>
+                    <div class="col-md-4">{{form_row(form.longLastingTreatment)}}</div> 
+                    <div class="col-md-4">{{form_row(form.punctualProcessing)}}</div> 
+                    <div class="col-md-4">{{form_row(form.otherMedicalHistory)}}</div> 
+              </div>
+              <hr>
+            <div class="row">
+                  <h6> Trauma history </h6>
+                <div class="col-md-4">{{form_row(form.sprain)}}</div> 
+                <div class="col-md-4">{{form_row(form.fracture)}}</div> 
+                <div class="col-md-4">{{form_row(form.dislocation)}}</div>
+            </div>
+            <div class="row"> 
+              <div class="col-md-4">{{form_row(form.carAccident)}}</div>
+              <div class="col-md-4">{{form_row(form.accidentOnThePublicRoad)}}</div>
+              <div class="col-md-4">{{form_row(form.fall)}}</div>
+              <div class="col-md-4">{{form_row(form.otherTraumaHistory)}}</div>
+            </div>
+            <hr>
+            <div class="row">
+              <h6> churgical histories</h6>
+              <div class="col-md-4">{{form_row(form.orthopaedic)}}</div> 
+              <div class="col-md-4">{{form_row(form.headChurigie)}}</div> 
+              <div class="col-md-4">{{form_row(form.chestChurigie)}}</div> 
+              <div class="col-md-4">{{form_row(form.churigiaOfAbdomen)}}</div> 
+              <div class="col-md-4">{{form_row(form.gynecologicalChurigie)}}</div> 
+              <div class="col-md-4">{{form_row(form.orl)}}</div> 
+            </div>
+            <hr>
+            <div class="row">
+              <h6> family history</h6>
+              <div class="col-md-4">{{form_row(form.death)}}</div> 
+              <div class="col-md-4">{{form_row(form.childbirth)}}</div> 
+              <div class="col-md-4">{{form_row(form.otherFamilyHistory)}}</div>  
+            </div>
+            </div>
+            <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+               4-Patient's documentation
+              </button>
+            </h2>
+            
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+               
+            </div>
+          </div>
+          </div>
+        </div>
+ 
+        {{ form_rest(form) }}
+        <button class="btn btn-primary"> Sauvegarder</button>
+    {{ form_end(form) }}
+
+{% endblock %}

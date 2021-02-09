@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{# <h1>Adding a new product</h1> #}
+
+{% block file %}
+{{ form_start(form) }}
+
+    {# <a href="{{ asset('uploads/brochures/' ~ product.brochure) }}">View brochure (PDF)</a> #}
+
+    {{ form_row(form.brochure) }}
+    <button class="btn btn-primary"> Upload </button>
+{{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}                   
+
+        
+
+         {% block title %}{% trans %} statstics {% endtrans %}{% endblock %}
+
+{# content script highchart start #}
+
+       
+
+{# Content highchart start #}
+
+        
+        {% block h2 %}
+            {% trans %} Statstics {% endtrans %}
+        {% endblock %}
+
+        {% block contentStastics %}
+
+            <figure class="highcharts-figure">
+                <div id="container"></div>
+                    <h3 class="highcharts-description">
+                        {% trans %} number of people by gender {% endtrans %}
+                    </h3>
+            </figure>
+            
+           {% endblock %}
+
+        {% block scriptStatstics %}
+            <script>
+                    var gender =[
+                {gender:"h",y:100},{gender:"f",y:50}
+                ]
+                $(document).ready(function() {                       
+
+                        $.ajax({
+                            url:"{{ path('get_all_patient') }}",
+                            cache:false
+
+                        } )
+                        .done(function(json){               
+                       
+                        var i=0;
+                        var imax= json.length;
+                            for(i=0;i<imax;i++){
+
+                                    if(json[i].gender=="Man"){
+                                        gender[0].y++;
+                                             
+                                    }else if(json[i].gender=="Women"){
+                                        gender[1].y++;
+                                    }
+                                        
+                                }
+
+                                Highcharts.chart('container', {
+                                    chart: {
+                                        plotBackgroundColor: null,
+                                        plotBorderWidth: null,
+                                        plotShadow: false,
+                                        type: 'pie'
+                                    },
+                                    title: {
+                                        text: ' {% trans %} number of people by gender {% endtrans %}'
+                                    },
+                                    tooltip: {
+                                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                    },
+                                    accessibility: {
+                                        point: {
+                                        valueSuffix: '%'
+                                        }
+                                    },
+                                    plotOptions: {
+                                        pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                        }
+                                        }
+                                    },
+                                    series: [{
+                                        name: 'Gender',
+                                        colorByPoint: true,
+                                        data: gender                                        
+                                        }]                        
+                                });
+                    });
+            
+                })
+            </script>
+        {% endblock %}
