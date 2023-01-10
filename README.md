@@ -1,7 +1,6 @@
 # AssistantWeb
-Il s'agit d'un site web qui permet de s’enregistrer et de se connecter selon le profil de l’utilisateur (patient ou praticien).
+It is a website that allows users to register and connect according to their profile (patient or practitioner).
 
-•	Un utilisateur du type patient peut accéder à une page dédier où il apparaît son profil, l'agenda avec tous les rendez-vous le concernant, la possibilité d'envoyer des documents mais aussi contacter son praticien.
-
-•	Un utilisateur du type praticien en plus des fonctionnalités d'un utilisateur patient, peut ajouter un nouveau patient, consulté la liste des tous ces patients.
+A patient user has access to a dedicated page where his profile is displayed, the agenda of all his appointments, the possibility to send documents and to contact his practitioners.
+In addition to the functions of a patient user, a practitioner user can add new patients and view the list of all these patients.
 
